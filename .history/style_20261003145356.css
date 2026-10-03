@@ -2011,7 +2011,8 @@ html.has-reveal [data-reveal].is-visible {
     .projects {
         padding-top: 55px;
         padding-bottom: 55px;
-        
+        padding-left: 50;
+        padding-right: 20px;
     }
 }
 

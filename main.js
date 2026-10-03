@@ -18,6 +18,81 @@ if (document.readyState === 'complete') {
     window.addEventListener('load', finishLoading, { once: true });
 }
 
+// Subtle entrance motion, active section links, and reading progress.
+const revealItems = document.querySelectorAll(
+    '.section-head, .about-grid, .skill-card, .log-entry, .project-card, .contact-grid'
+);
+
+if ('IntersectionObserver' in window) {
+    document.documentElement.classList.add('has-reveal');
+
+    revealItems.forEach((item, index) => {
+        item.setAttribute('data-reveal', '');
+        const siblings = [...item.parentElement.children].filter(child =>
+            child.matches('.skill-card, .log-entry, .project-card')
+        );
+        if (siblings.length > 1) {
+            item.style.setProperty('--reveal-delay', `${(siblings.indexOf(item) % 4) * 90}ms`);
+        }
+    });
+
+    const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
+
+    revealItems.forEach(item => revealObserver.observe(item));
+
+    const sectionLinks = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+    const observedSections = sectionLinks
+        .map(link => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+
+    const sectionObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            sectionLinks.forEach(link => {
+                if (link.getAttribute('href') === `#${entry.target.id}`) {
+                    link.setAttribute('aria-current', 'location');
+                } else {
+                    link.removeAttribute('aria-current');
+                }
+            });
+        });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+
+    observedSections.forEach(section => sectionObserver.observe(section));
+} else {
+    revealItems.forEach(item => item.classList.add('is-visible'));
+}
+
+const progressBar = document.getElementById('readingProgress');
+const header = document.querySelector('header');
+const backToTop = document.querySelector('.back-to-top');
+let scrollUpdateQueued = false;
+
+function updateScrollUI() {
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
+
+    if (progressBar) progressBar.style.transform = `scaleX(${Math.min(1, Math.max(0, progress))})`;
+    if (header) header.classList.toggle('is-scrolled', window.scrollY > 12);
+    if (backToTop) backToTop.classList.toggle('is-visible', window.scrollY > 500);
+    scrollUpdateQueued = false;
+}
+
+window.addEventListener('scroll', () => {
+    if (!scrollUpdateQueued) {
+        scrollUpdateQueued = true;
+        window.requestAnimationFrame(updateScrollUI);
+    }
+}, { passive: true });
+updateScrollUI();
+
 const form = document.getElementById('contactForm');
 const preview = document.getElementById('jsonPreview');
 
