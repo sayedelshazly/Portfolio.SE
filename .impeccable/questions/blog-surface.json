@@ -1,0 +1,41 @@
+{
+  "title": "Choose the blog’s reading structure",
+  "question": "Which page structure best helps visitors discover Sayed’s automotive work and interests in content creation? All three keep the current site identity and calm, readable article text.",
+  "options": [
+    {
+      "id": "field-notes",
+      "label": "Field Notes",
+      "kicker": "THE ROLL",
+      "lineage": "An inspector’s notebook, adapted as a personal editorial journal",
+      "thesis": "One featured dispatch leads into a clear stream of notes on cars, quality, and making content.",
+      "palette": ["#0A0908", "#15120F", "#F2EDE9", "#C81D25"],
+      "materials": ["warm paper", "ink", "red annotation marks"],
+      "viewport": "A strong masthead and featured essay lead the reading column; a slim side index points to automotive, quality, and creator topics.",
+      "risk": "The notebook language could become too technical if annotations crowd the articles.",
+      "html": ".impeccable/mocks/decision/field-notes.html"
+    },
+    {
+      "id": "garage-index",
+      "label": "Open Garage Index",
+      "lineage": "An independent motoring journal with a browsable editorial archive",
+      "thesis": "A personal introduction sits beside one lead story, with a tidy archive grouped by subject below.",
+      "palette": ["#F6F3EF", "#FFFEFC", "#211A17", "#C81D25"],
+      "materials": ["warm white stock", "dark ink", "editorial rules"],
+      "viewport": "The reader meets Sayed and the lead article first, then sees distinct article rows for cars, quality, and content creation.",
+      "risk": "A conventional magazine grid could make the personal voice feel secondary.",
+      "html": ".impeccable/mocks/decision/garage-index.html"
+    },
+    {
+      "id": "two-lens",
+      "label": "Two Lenses Journal",
+      "lineage": "A field guide that connects a subject’s craft with the stories made about it",
+      "thesis": "Two clear reading paths connect automotive quality and content creation without blending their topics.",
+      "palette": ["#15120F", "#F6F3EF", "#675C56", "#C81D25"],
+      "materials": ["ink-dark masthead", "paper reading field", "red section marks"],
+      "viewport": "A personal opening branches into two labeled article tracks, then rejoins in a short profile and chronological archive.",
+      "risk": "Separate tracks may fragment the page if shared context and chronology are hard to find.",
+      "html": ".impeccable/mocks/decision/two-lens.html"
+    }
+  ],
+  "steer": true
+}

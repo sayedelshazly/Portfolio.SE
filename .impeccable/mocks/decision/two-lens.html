@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two editorial tracks — Sayed Elshazly</title>
+<style>
+  :root{color-scheme:dark;--void:#0a0908;--surface:#15120f;--raised:#1d1815;--ink:#f2ede9;--muted:#b3aaa3;--line:#342a25;--red:#e5333b;--mono:"JetBrains Mono",Consolas,monospace;--sans:Inter,Arial,sans-serif;--display:"Archivo Black",Arial,sans-serif}
+  *{box-sizing:border-box}html,body{width:1440px;height:900px;margin:0;overflow:hidden}body{background:var(--void);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+  .page{width:100%;height:100%;padding:36px 82px 44px;display:flex;flex-direction:column;background:radial-gradient(ellipse at 83% 12%,rgba(110,13,20,.13),transparent 30%),var(--void)}
+  .masthead{height:58px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--muted)}
+  .brand{font:700 16px/1 var(--sans);letter-spacing:-.04em;color:var(--ink)}.brand span{color:var(--red)}.mast-right{display:flex;align-items:center;gap:28px}.back{color:var(--ink);text-decoration:none;border-bottom:1px solid #66554c;padding:4px 0}
+  main{width:100%;max-width:1276px;margin:0 auto;flex:1;display:flex;flex-direction:column}
+  .intro{padding:45px 0 36px;border-bottom:1px solid var(--line)}h1{font:400 45px/1.12 var(--display);letter-spacing:-.035em;margin:0 0 17px;max-width:740px}h1 em{color:var(--red);font-style:normal}
+  .lede{max-width:70ch;color:var(--muted);font-size:17px;line-height:1.7;margin:0}.lede strong{color:var(--ink);font-weight:600}
+  .tracks{display:grid;grid-template-columns:1fr 1fr;gap:0;flex:1;padding-top:30px}
+  .track{padding:0 52px 0 0;display:flex;flex-direction:column}.track+ .track{border-left:1px solid var(--line);padding:0 0 0 52px}
+  .track-head{display:flex;align-items:center;gap:13px;margin-bottom:23px}.track-mark{width:31px;height:31px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;color:var(--red);font:12px var(--mono)}.track-label{font:11px var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+  h2{font:400 27px/1.2 var(--display);letter-spacing:-.025em;margin:0 0 11px}.track-summary{max-width:62ch;color:var(--muted);margin:0 0 29px;line-height:1.7}
+  .article{margin-top:auto;border-top:1px solid var(--line);padding-top:19px}.article-kicker{font:11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red-readable,var(--red));margin-bottom:9px}.article h3{font:600 21px/1.35 var(--sans);letter-spacing:-.02em;margin:0 0 9px;max-width:30ch}.article p{max-width:60ch;margin:0;color:var(--muted);font-size:15px;line-height:1.7}
+  .track.automotive .track-mark{border-radius:5px}.track.creation .track-mark{border-radius:50% 50% 50% 4px}
+  footer{height:48px;border-top:1px solid var(--line);display:flex;align-items:flex-end;justify-content:space-between;color:var(--muted);font:11px var(--mono);letter-spacing:.06em}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="masthead">
+    <a class="brand" href="#">Sayed Elshazly <span>/&gt;</span></a>
+    <div class="mast-right"><span>NOTES &amp; PERSPECTIVES</span><a class="back" href="../../../index.html">Portfolio <span aria-hidden="true">↗</span></a></div>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <h1 id="page-title">Two fields. One curious <em>mind.</em></h1>
+      <p class="lede">I’m Sayed, a <strong>backend engineer</strong> and <strong>automotive quality inspector</strong>. Here I share what I’m learning across reliable software, careful quality work, content creation, and the wider car world.</p>
+    </section>
+    <div class="tracks">
+      <section class="track automotive" aria-labelledby="auto-title">
+        <div class="track-head"><span class="track-mark" aria-hidden="true">A</span><span class="track-label">Field notes · Automotive quality</span></div>
+        <h2 id="auto-title">A closer look at the car world</h2>
+        <p class="track-summary">Observations on vehicle quality, the details that shape a car, and the conversations happening across automotive culture.</p>
+        <article class="article">
+          <div class="article-kicker">Draft article · 5 min read</div>
+          <h3>What “quality” means beyond the first impression</h3>
+          <p>A thoughtful introduction to quality as a way of looking: noticing consistency, fit, finish, and the small details that influence how a vehicle feels over time.</p>
+        </article>
+      </section>
+      <section class="track creation" aria-labelledby="creation-title">
+        <div class="track-head"><span class="track-mark" aria-hidden="true">C</span><span class="track-label">Studio notes · Content creation</span></div>
+        <h2 id="creation-title">Making ideas clear and useful</h2>
+        <p class="track-summary">A personal space for the creative process: shaping an idea, finding its point, and making something worth someone’s attention.</p>
+        <article class="article">
+          <div class="article-kicker">Draft article · 4 min read</div>
+          <h3>From a rough idea to a story people can follow</h3>
+          <p>A practical reflection on choosing one clear message, organizing it into a natural sequence, and giving an audience a reason to stay with the story.</p>
+        </article>
+      </section>
+    </div>
+  </main>
+  <footer><span>SAYED ELSHAZLY · CAIRO, EGYPT</span><span>ENGINEERING · AUTOMOTIVE · CREATION</span></footer>
+</div>
+</body>
+</html>

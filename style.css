@@ -33,21 +33,21 @@
 
 html[data-theme="light"] {
     color-scheme: light;
-    --bg-void: #F6F3EF;
-    --bg-surface: #FFFEFC;
-    --bg-surface-2: #EEE9E3;
-    --red-primary: #C81D25;
-    --red-bright: #B51F27;
-    --red-readable: #A31C24;
-    --red-deep: #86171E;
-    --text-primary: #211A17;
-    --text-muted: #675C56;
-    --line: #DCD3CC;
+    --bg-void: #F3F5F7;
+    --bg-surface: #FFFFFF;
+    --bg-surface-2: #E8EDF2;
+    --red-primary: #B4232E;
+    --red-bright: #A61E29;
+    --red-readable: #9E202A;
+    --red-deep: #741820;
+    --text-primary: #1D2733;
+    --text-muted: #536273;
+    --line: #D5DDE5;
     --selection-text: #FFFFFF;
-    --success-text: #1E7A3B;
-    --success-surface: #E7F4E9;
-    --warning-text: #80500F;
-    --warning-surface: #FFF2D8;
+    --success-text: #1D6D48;
+    --success-surface: #E8F3ED;
+    --warning-text: #80530F;
+    --warning-surface: #FFF3DC;
 }
 
 * {
@@ -2812,7 +2812,7 @@ html[data-theme="light"] body {
 
 html[data-theme="light"] header,
 html[data-theme="light"] header.is-scrolled {
-    background: rgba(246, 243, 239, .96);
+    background: rgba(243, 245, 247, .96);
     border-bottom-color: var(--line);
 }
 
@@ -2821,27 +2821,27 @@ html[data-theme="light"] .preloader {
 }
 
 html[data-theme="light"] .term-card {
-    box-shadow: 0 28px 50px -22px rgba(53, 36, 28, .22);
+    box-shadow: 0 28px 50px -22px rgba(30, 41, 59, .16);
 }
 
 html[data-theme="light"] .term-card:hover {
-    box-shadow: 0 34px 58px -22px rgba(53, 36, 28, .28);
+    box-shadow: 0 34px 58px -22px rgba(30, 41, 59, .22);
 }
 
 html[data-theme="light"] .btn {
-    box-shadow: 0 8px 24px rgba(53, 36, 28, .12);
+    box-shadow: 0 8px 24px rgba(30, 41, 59, .1);
 }
 
 html[data-theme="light"] .nav-links {
-    box-shadow: 0 18px 32px rgba(53, 36, 28, .12);
+    box-shadow: 0 18px 32px rgba(30, 41, 59, .1);
 }
 
 html[data-theme="light"] .json-preview .v {
-    color: #514840;
+    color: #465466;
 }
 
 html[data-theme="light"] .back-to-top {
-    background: rgba(255, 254, 252, .96);
+    background: rgba(255, 255, 255, .96);
 }
 
 html[data-theme="light"] input::placeholder,

@@ -11,9 +11,9 @@
       const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
       try {
         const savedTheme = localStorage.getItem('portfolio-theme');
-        document.documentElement.dataset.theme = savedTheme === 'light' || savedTheme === 'dark' ?
-          savedTheme :
-          (systemPrefersLight ? 'light' : 'dark');
+        document.documentElement.dataset.theme = savedTheme === 'light' || savedTheme === 'dark'
+          ? savedTheme
+          : (systemPrefersLight ? 'light' : 'dark');
       } catch {
         document.documentElement.dataset.theme = systemPrefersLight ? 'light' : 'dark';
       }
@@ -43,10 +43,8 @@
   <header>
     <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
     <nav>
-      <a class="logo" href="#top" aria-label="Sayed Elshazly, back to top"><span
-          class="br">&lt;</span>SayedElshazly<span class="br">/&gt;</span></a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation"
-        aria-label="Open navigation">
+      <a class="logo" href="#top" aria-label="Sayed Elshazly, back to top"><span class="br">&lt;</span>SayedElshazly<span class="br">/&gt;</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Open navigation">
         <span></span><span></span>
       </button>
       <ul class="nav-links" id="site-navigation">
@@ -59,13 +57,10 @@
         <li class="nav-close-item"><button class="nav-close" type="button">Close menu</button></li>
       </ul>
       <div class="status-pill"><span class="dot"></span><span class="label">available for work</span></div>
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode"
-        title="Switch to light mode">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" title="Switch to light mode">
         <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <circle cx="12" cy="12" r="4"></circle>
-          <path
-            d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42">
-          </path>
+          <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
         </svg>
         <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <path d="M20.2 15.1A8.5 8.5 0 0 1 8.9 3.8 8.6 8.6 0 1 0 20.2 15.1Z"></path>
@@ -245,8 +240,7 @@
 
         <div class="project-card">
           <figure class="project-visual">
-            <img src="./assets/inventory-preview.svg" alt="Illustrative inventory dashboard preview" loading="lazy"
-              decoding="async">
+            <img src="./assets/inventory-preview.svg" alt="Illustrative inventory dashboard preview" loading="lazy" decoding="async">
           </figure>
           <div class="pc-top">
             <span class="method get">GET</span>
@@ -268,8 +262,7 @@
 
         <div class="project-card">
           <figure class="project-visual">
-            <img src="./assets/booking-preview.svg" alt="Illustrative booking calendar preview" loading="lazy"
-              decoding="async">
+            <img src="./assets/booking-preview.svg" alt="Illustrative booking calendar preview" loading="lazy" decoding="async">
           </figure>
           <div class="pc-top">
             <span class="method post">POST</span>
@@ -292,8 +285,7 @@
 
         <div class="project-card">
           <figure class="project-visual">
-            <img src="./assets/analytics-preview.svg" alt="Illustrative analytics dashboard preview" loading="lazy"
-              decoding="async">
+            <img src="./assets/analytics-preview.svg" alt="Illustrative analytics dashboard preview" loading="lazy" decoding="async">
           </figure>
           <div class="pc-top">
             <span class="method get">GET</span>
@@ -315,8 +307,7 @@
 
         <div class="project-card">
           <figure class="project-visual">
-            <img src="./assets/auth-preview.svg" alt="Illustrative authentication service preview" loading="lazy"
-              decoding="async">
+            <img src="./assets/auth-preview.svg" alt="Illustrative authentication service preview" loading="lazy" decoding="async">
           </figure>
           <div class="pc-top">
             <span class="method put">PUT</span>

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Notes on cars, automotive quality, and content creation by Sayed Elshazly.">
+  <title>Garage Journal — Sayed Elshazly</title>
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem('portfolio-theme');
+        const light = saved ? saved === 'light' : matchMedia('(prefers-color-scheme: light)').matches;
+        document.documentElement.dataset.theme = light ? 'light' : 'dark';
+      } catch { /* Keep the default theme when storage is unavailable. */ }
+    })();
+    document.documentElement.classList.add('is-loading');
+    window.__pageLoadStartedAt = performance.now();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="blog.css">
+</head>
+<body class="journal-page">
+  <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading journal">
+    <div class="loader-content">
+      <span class="loader-mark"><span>&lt;</span>SE<span>/&gt;</span></span>
+      <span class="loader-spinner" aria-hidden="true"></span>
+      <span class="loader-text">Opening the journal</span>
+      <span class="loader-progress" aria-hidden="true"><span></span></span>
+    </div>
+  </div>
+
+  <header>
+    <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
+    <nav aria-label="Main navigation">
+      <a class="logo" href="index.html#top" aria-label="Sayed Elshazly, portfolio home"><span class="br">&lt;</span>SayedElshazly<span class="br">/&gt;</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="journal-navigation" aria-label="Open navigation">
+        <span></span><span></span>
+      </button>
+      <ul class="nav-links" id="journal-navigation">
+        <li><a href="index.html#about">about</a></li>
+        <li><a href="index.html#projects">projects</a></li>
+        <li><a href="index.html#contact">contact</a></li>
+        <li><a href="blog.html" aria-current="page">Blog</a></li>
+        <li class="nav-close-item"><button class="nav-close" type="button">Close menu</button></li>
+      </ul>
+      <a class="status-pill journal-home" href="index.html#top"><span aria-hidden="true">↖</span><span class="label">Portfolio</span></a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" title="Switch to light mode">
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.2 15.1A8.5 8.5 0 0 1 8.9 3.8 8.6 8.6 0 1 0 20.2 15.1Z"></path></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main class="journal wrap" id="top">
+    <section class="journal-intro" aria-labelledby="journal-title">
+      <div class="journal-heading">
+        <h1 id="journal-title">Open <span>Garage</span><br>Index<span class="accent">.</span></h1>
+        <p class="journal-deck">A personal journal about looking closer: at the way a car is made, the details that shape its character, and the stories we make around it.</p>
+      </div>
+      <aside class="journal-byline">
+        <p class="byline-label">The person behind the notes</p>
+        <p class="byline-name">Sayed Elshazly</p>
+        <p>Backend engineer and automotive quality inspector. Outside work, I’m interested in content creation and the wider car world.</p>
+        <a href="index.html#about">More about me <span aria-hidden="true">↗</span></a>
+      </aside>
+    </section>
+
+    <section class="journal-feature"  aria-labelledby="feature-title">
+      <div class="feature-copy">
+        <div class="feature-meta"><span>Featured note</span><span>Quality · Perspective</span></div>
+        <h2 id="feature-title">A car is more than the sum of its parts.</h2>
+        <p>It is the small decisions working together: the way a door closes, the way a surface meets its edge, the confidence a driver feels without needing to think about it.</p>
+        <a class="feature-link" href="#quality-note">Read the lead story <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="feature-aside" aria-label="Journal topics">
+        <p class="aside-label">What I’m exploring</p>
+        <ul>
+          <li><span>01</span> The car, up close</li>
+          <li><span>02</span> Quality in the details</li>
+          <li><span>03</span> Making stories worth sharing</li>
+        </ul>
+        <p class="aside-note">Observations and personal perspectives, collected as I go.</p>
+      </div>
+    </section>
+
+    <section class="journal-archive" aria-labelledby="archive-title">
+      <div class="archive-heading">
+        <h2 id="archive-title">Browse the journal</h2>
+        <p>Three threads, one curious point of view.</p>
+      </div>
+      <div class="journal-categories">
+        <section class="journal-category" aria-labelledby="cars-title">
+          <div class="category-heading"><h3 id="cars-title">Car culture</h3><span>01—02</span></div>
+          <a class="archive-story" href="#car-details"><span class="story-title">The details that give a car its character</span><span class="story-kind">Design · 3 min</span><span class="story-arrow" aria-hidden="true">↗</span></a>
+          <a class="archive-story" href="#car-curiosity"><span class="story-title">Looking at cars with fresh eyes</span><span class="story-kind">Cars · 2 min</span><span class="story-arrow" aria-hidden="true">↗</span></a>
+        </section>
+        <section class="journal-category" aria-labelledby="quality-title">
+          <div class="category-heading"><h3 id="quality-title">Quality</h3><span>03—04</span></div>
+          <a class="archive-story" href="#quality-note"><span class="story-title">A car is more than the sum of its parts</span><span class="story-kind">Perspective · 3 min</span><span class="story-arrow" aria-hidden="true">↗</span></a>
+          <a class="archive-story" href="#consistency"><span class="story-title">Consistency is a quiet kind of craft</span><span class="story-kind">Craft · 2 min</span><span class="story-arrow" aria-hidden="true">↗</span></a>
+        </section>
+        <section class="journal-category" aria-labelledby="creation-title">
+          <div class="category-heading"><h3 id="creation-title">Content creation</h3><span>05—06</span></div>
+          <a class="archive-story" href="#storytelling"><span class="story-title">Turning an observation into a story</span><span class="story-kind">Creative process · 3 min</span><span class="story-arrow" aria-hidden="true">↗</span></a>
+          <a class="archive-story" href="#making-useful"><span class="story-title">Making useful things easier to share</span><span class="story-kind">Notes · 2 min</span><span class="story-arrow" aria-hidden="true">↗</span></a>
+        </section>
+      </div>
+    </section>
+
+    <section class="journal-reading" aria-labelledby="reading-title">
+      <div class="reading-heading"><h2 id="reading-title">From the notebook</h2><p>Draft reflections on the things I enjoy learning about.</p></div>
+      <div class="reading-list">
+        <article class="journal-article" id="quality-note">
+          <p class="article-topic">Quality <span>·</span> Perspective</p>
+          <h3>A car is more than the sum of its parts</h3>
+          <p>When I think about a car, I don’t think only about a list of components. I think about how the whole experience comes together. A single detail may be easy to overlook, but many details working consistently can make a vehicle feel considered and dependable.</p>
+          <p>That is one reason quality interests me. It asks us to pay attention, to compare what we expect with what is actually there, and to care about repeatability. The most convincing result is often the one that feels natural because the small things have been handled well.</p>
+        </article>
+        <article class="journal-article" id="car-details">
+          <p class="article-topic">Car culture <span>·</span> Design</p>
+          <h3>The details that give a car its character</h3>
+          <p>Two cars can serve the same purpose and still leave very different impressions. Character often lives in the choices around the main shape: proportions, materials, controls, and the way separate elements feel like they belong together.</p>
+          <p>Looking closely changes the experience of seeing a car. Instead of asking only whether I like it, I can ask what choices are creating that response. That question keeps the subject interesting, whether I’m looking at a familiar model or discovering one for the first time.</p>
+        </article>
+        <article class="journal-article" id="car-curiosity">
+          <p class="article-topic">Car culture <span>·</span> Notes</p>
+          <h3>Looking at cars with fresh eyes</h3>
+          <p>It is easy to reduce a car to a badge, a specification, or a quick opinion. I enjoy slowing down and noticing how it has been put together: what draws the eye, what feels intuitive, and which details reward a second look.</p>
+          <p>Curiosity is a useful starting point. It leaves room to appreciate different kinds of cars and to learn something from each one, without pretending that one taste or viewpoint tells the whole story.</p>
+        </article>
+        <article class="journal-article" id="consistency">
+          <p class="article-topic">Quality <span>·</span> Craft</p>
+          <h3>Consistency is a quiet kind of craft</h3>
+          <p>Quality is not only about one impressive example. It is also about whether a good result can be repeated. Consistency may not announce itself, but it helps make an experience feel trustworthy from one moment to the next.</p>
+          <p>That idea connects with how I approach my work as a quality inspector: pay attention to the result, look for differences, and value a process that can deliver reliably. These are broad reflections, not a technical inspection guide; the specific checks always depend on the vehicle and the process.</p>
+        </article>
+        <article class="journal-article" id="storytelling">
+          <p class="article-topic">Content creation <span>·</span> Process</p>
+          <h3>Turning an observation into a story</h3>
+          <p>An idea often starts with something small: a detail I noticed, a question I cannot answer yet, or a connection between two interests. Content creation gives me a way to follow that curiosity and shape it into something another person can understand.</p>
+          <p>I want the finished piece to be clear about what it is: an observation, a personal perspective, or something I am still exploring. That simple distinction makes a story more honest and gives the reader a better reason to stay with it.</p>
+        </article>
+        <article class="journal-article" id="making-useful">
+          <p class="article-topic">Content creation <span>·</span> Notes</p>
+          <h3>Making useful things easier to share</h3>
+          <p>Good communication is part of making something useful. A thought can be interesting to its author and still be hard for someone else to follow. The work is to find the clear entry point, keep the details that matter, and give the idea a shape that suits the audience.</p>
+          <p>That is what draws me to creating content. It combines curiosity with editing: deciding what belongs, what needs more context, and how to make a subject approachable without making it less thoughtful.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="journal-close" aria-label="Contact">
+      <p>For projects, conversations, or a good car story.</p>
+      <a href="index.html#contact">Get in touch <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+
+  <footer class="journal-footer"><div class="wrap"><a href="index.html#top">Sayed Elshazly</a><span>Garage Journal · Cars, quality &amp; creative work</span><a href="#top">Back to top ↑</a></div></footer>
+  <script src="main.js"></script>
+</body>
+</html>

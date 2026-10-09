@@ -79,7 +79,7 @@ if (document.readyState === 'complete') {
 
 // Subtle entrance motion, active section links, and reading progress.
 const revealItems = document.querySelectorAll(
-    '.section-head, .about-grid, .skill-card, .log-entry, .project-card, .contact-grid'
+    '.section-head, .about-grid, .skill-card, .log-entry, .project-card, .contact-grid, .journal-intro, .journal-feature, .journal-category, .journal-article'
 );
 
 if ('IntersectionObserver' in window) {
@@ -150,9 +150,19 @@ if (navToggle && navLinks) {
     });
 
     navLinks.addEventListener('click', event => {
-        if (event.target instanceof Element && event.target.closest('.nav-close')) {
+        if (!(event.target instanceof Element)) return;
+
+        if (event.target.closest('.nav-close')) {
             setNavigationOpen(false);
             navToggle.focus();
+            return;
+        }
+
+        const pageLink = event.target.closest('a[data-page-navigation]');
+        if (pageLink) {
+            event.preventDefault();
+            setNavigationOpen(false);
+            window.location.assign(new URL(pageLink.getAttribute('href'), document.baseURI));
         }
     });
 
@@ -230,7 +240,7 @@ function updatePreview() {
 });
 
 // التعامل مع حدث الإرسال بشكل واقعي (Pending -> Success)
-form.addEventListener('submit', function (e) {
+if (form) form.addEventListener('submit', function (e) {
     e.preventDefault();
     const btn = form.querySelector('button');
     const originalText = btn.textContent;
