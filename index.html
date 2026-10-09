@@ -4,8 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="color-scheme" content="dark light">
   <title>Sayed Elshazly — Backend Engineer</title>
   <script>
+    (() => {
+      const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+      try {
+        const savedTheme = localStorage.getItem('portfolio-theme');
+        document.documentElement.dataset.theme = savedTheme === 'light' || savedTheme === 'dark'
+          ? savedTheme
+          : (systemPrefersLight ? 'light' : 'dark');
+      } catch {
+        document.documentElement.dataset.theme = systemPrefersLight ? 'light' : 'dark';
+      }
+    })();
     document.documentElement.classList.add('is-loading');
     window.__pageLoadStartedAt = performance.now();
   </script>
@@ -45,6 +57,15 @@
         <li class="nav-close-item"><button class="nav-close" type="button">Close menu</button></li>
       </ul>
       <div class="status-pill"><span class="dot"></span><span class="label">available for work</span></div>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" title="Switch to light mode">
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+        </svg>
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M20.2 15.1A8.5 8.5 0 0 1 8.9 3.8 8.6 8.6 0 1 0 20.2 15.1Z"></path>
+        </svg>
+      </button>
     </nav>
   </header>
 
@@ -52,21 +73,19 @@
 
     <!-- ================= HERO ================= -->
     <section class="hero wrap" id="top">
-      <div>
+      <div class="hero-intro">
         <h1>Sayed Abdo Elshazly<span class="accent">.</span></h1>
         <div class="eyebrow">GET /developer <span class="status">· HTTP/1.1 200 OK</span></div>
         <div class="role">Backend Engineer <span class="pipe">/</span> PHP &amp; Laravel Specialist</div>
+      </div>
+
+      <div class="hero-support">
         <p class="lede">I design and ship reliable server-side systems — clean APIs, solid database
           architecture, and code that holds up in production. Based in Cairo, working with teams
           anywhere.</p>
         <div class="btn-row">
           <a href="#projects" class="btn btn-primary">View Projects →</a>
           <a href="#contact" class="btn btn-ghost">Let's Talk <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="stat-row">
-          <div class="stat"><b>3+</b><span>Years Experience</span></div>
-          <div class="stat"><b>20+</b><span>Projects Shipped</span></div>
-          <div class="stat"><b>15+</b><span>APIs Built</span></div>
         </div>
       </div>
 
@@ -84,6 +103,12 @@
             <span class="k">"status"</span>: <span class="s">"available"</span><span class="cursor"></span>
           </div>
         </div>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat"><b>3+</b><span>Years Experience</span></div>
+        <div class="stat"><b>20+</b><span>Projects Shipped</span></div>
+        <div class="stat"><b>15+</b><span>APIs Built</span></div>
       </div>
     </section>
 
@@ -214,6 +239,9 @@
       <div class="project-grid">
 
         <div class="project-card">
+          <figure class="project-visual">
+            <img src="./assets/inventory-preview.svg" alt="Illustrative inventory dashboard preview" loading="lazy" decoding="async">
+          </figure>
           <div class="pc-top">
             <span class="method get">GET</span>
             <span class="route">/projects/inventory-api</span>
@@ -233,6 +261,9 @@
         </div>
 
         <div class="project-card">
+          <figure class="project-visual">
+            <img src="./assets/booking-preview.svg" alt="Illustrative booking calendar preview" loading="lazy" decoding="async">
+          </figure>
           <div class="pc-top">
             <span class="method post">POST</span>
             <span class="route">/projects/booking-system</span>
@@ -253,6 +284,9 @@
         </div>
 
         <div class="project-card">
+          <figure class="project-visual">
+            <img src="./assets/analytics-preview.svg" alt="Illustrative analytics dashboard preview" loading="lazy" decoding="async">
+          </figure>
           <div class="pc-top">
             <span class="method get">GET</span>
             <span class="route">/projects/analytics-service</span>
@@ -272,6 +306,9 @@
         </div>
 
         <div class="project-card">
+          <figure class="project-visual">
+            <img src="./assets/auth-preview.svg" alt="Illustrative authentication service preview" loading="lazy" decoding="async">
+          </figure>
           <div class="pc-top">
             <span class="method put">PUT</span>
             <span class="route">/projects/auth-service</span>
@@ -280,7 +317,7 @@
           <div class="pc-body">
             <h3>Project Name — Auth Microservice</h3>
             <p>Standalone authentication service with JWT, role-based permissions, and
-              and rate-limited endpoints for secure client applications.</p>
+              rate-limited endpoints for secure client applications.</p>
             <div class="tag-row" style="margin-bottom:18px;">
               <span class="tag">Laravel Sanctum</span><span class="tag">Redis</span><span class="tag">Docker</span>
             </div>

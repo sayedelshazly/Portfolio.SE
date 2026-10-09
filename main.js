@@ -1,5 +1,63 @@
 // Live JSON preview reflecting the contact form as it's filled in
 const preloader = document.getElementById('preloader');
+const themeToggle = document.getElementById('themeToggle');
+const themePreference = window.matchMedia('(prefers-color-scheme: light)');
+let hasExplicitTheme = false;
+
+try {
+    hasExplicitTheme = ['light', 'dark'].includes(localStorage.getItem('portfolio-theme'));
+} catch {
+    hasExplicitTheme = true;
+}
+
+function setTheme(theme, persist = false) {
+    const selectedTheme = theme === 'light' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = selectedTheme;
+
+    if (themeToggle) {
+        const nextTheme = selectedTheme === 'light' ? 'dark' : 'light';
+        const label = `Switch to ${nextTheme} mode`;
+        themeToggle.setAttribute('aria-label', label);
+        themeToggle.title = label;
+    }
+
+    if (persist) {
+        hasExplicitTheme = true;
+        try {
+            localStorage.setItem('portfolio-theme', selectedTheme);
+        } catch {
+            // Keep the selected theme for this page view when storage is unavailable.
+        }
+    }
+}
+
+if (themeToggle) {
+    setTheme(document.documentElement.dataset.theme || 'dark');
+    themeToggle.addEventListener('click', () => {
+        setTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light', true);
+    });
+}
+
+const updateSystemTheme = event => {
+    if (!hasExplicitTheme) setTheme(event.matches ? 'light' : 'dark');
+};
+
+if (themePreference.addEventListener) {
+    themePreference.addEventListener('change', updateSystemTheme);
+} else {
+    themePreference.addListener(updateSystemTheme);
+}
+
+window.addEventListener('storage', event => {
+    if (event.key !== 'portfolio-theme') return;
+    if (event.newValue === 'light' || event.newValue === 'dark') {
+        hasExplicitTheme = true;
+        setTheme(event.newValue);
+    } else if (event.newValue === null) {
+        hasExplicitTheme = false;
+        setTheme(themePreference.matches ? 'light' : 'dark');
+    }
+});
 
 function finishLoading() {
     const minimumDisplayTime = 2000;
