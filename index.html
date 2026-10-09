@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Sayed Elshazly — Backend Engineer</title>
   <script>
     document.documentElement.classList.add('is-loading');
@@ -32,13 +32,17 @@
     <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
     <nav>
       <a class="logo" href="#top" aria-label="Sayed Elshazly, back to top"><span class="br">&lt;</span>SayedElshazly<span class="br">/&gt;</span></a>
-      <ul class="nav-links">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Open navigation">
+        <span></span><span></span>
+      </button>
+      <ul class="nav-links" id="site-navigation">
         <li><a href="#about">about</a></li>
         <li><a href="#skills">skills</a></li>
         <li><a href="#experience">experience</a></li>
         <li><a href="#projects">projects</a></li>
         <li><a href="#contact">contact</a></li>
         <li><a href="#">Blog</a></li>
+        <li class="nav-close-item"><button class="nav-close" type="button">Close menu</button></li>
       </ul>
       <div class="status-pill"><span class="dot"></span><span class="label">available for work</span></div>
     </nav>
@@ -49,8 +53,8 @@
     <!-- ================= HERO ================= -->
     <section class="hero wrap" id="top">
       <div>
-        <div class="eyebrow">GET /developer <span class="status">· HTTP/1.1 200 OK</span></div>
         <h1>Sayed Abdo Elshazly<span class="accent">.</span></h1>
+        <div class="eyebrow">GET /developer <span class="status">· HTTP/1.1 200 OK</span></div>
         <div class="role">Backend Engineer <span class="pipe">/</span> PHP &amp; Laravel Specialist</div>
         <p class="lede">I design and ship reliable server-side systems — clean APIs, solid database
           architecture, and code that holds up in production. Based in Cairo, working with teams

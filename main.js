@@ -8,6 +8,7 @@ function finishLoading() {
 
     window.setTimeout(() => {
         document.documentElement.classList.remove('is-loading');
+        document.documentElement.classList.add('is-ready');
         if (preloader) preloader.setAttribute('aria-hidden', 'true');
     }, wait);
 }
@@ -49,7 +50,8 @@ if ('IntersectionObserver' in window) {
 
     const sectionLinks = [...document.querySelectorAll('.nav-links a[href^="#"]')];
     const observedSections = sectionLinks
-        .map(link => document.querySelector(link.getAttribute('href')))
+        .filter(link => link.getAttribute('href').length > 1)
+        .map(link => document.getElementById(link.getAttribute('href').slice(1)))
         .filter(Boolean);
 
     const sectionObserver = new IntersectionObserver(entries => {
@@ -73,7 +75,55 @@ if ('IntersectionObserver' in window) {
 const progressBar = document.getElementById('readingProgress');
 const header = document.querySelector('header');
 const backToTop = document.querySelector('.back-to-top');
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
 let scrollUpdateQueued = false;
+
+function setNavigationOpen(open) {
+    if (!navToggle || !navLinks) return;
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    navLinks.classList.toggle('is-open', open);
+}
+
+if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+        setNavigationOpen(navToggle.getAttribute('aria-expanded') !== 'true');
+    });
+
+    navLinks.addEventListener('click', event => {
+        if (event.target instanceof Element && event.target.closest('.nav-close')) {
+            setNavigationOpen(false);
+            navToggle.focus();
+        }
+    });
+
+    document.addEventListener('click', event => {
+        if (event.target instanceof Node &&
+            !navLinks.contains(event.target) &&
+            !navToggle.contains(event.target)) {
+            setNavigationOpen(false);
+        }
+    });
+
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') {
+            setNavigationOpen(false);
+            navToggle.focus();
+        }
+    });
+
+    const desktopNavigation = window.matchMedia('(min-width: 921px)');
+    const closeNavigationOnDesktop = event => {
+        if (event.matches) setNavigationOpen(false);
+    };
+
+    if (desktopNavigation.addEventListener) {
+        desktopNavigation.addEventListener('change', closeNavigationOnDesktop);
+    } else {
+        desktopNavigation.addListener(closeNavigationOnDesktop);
+    }
+}
 
 function updateScrollUI() {
     const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
