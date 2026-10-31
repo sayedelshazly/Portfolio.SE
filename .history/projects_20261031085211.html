@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Notes on cars, automotive quality, and content creation by Sayed Elshazly.">
+    <title>Garage Journal — Sayed Elshazly</title>
+    <script>
+        (() => {
+            try {
+                const saved = localStorage.getItem('portfolio-theme');
+                const light = saved ? saved === 'light' : matchMedia('(prefers-color-scheme: light)').matches;
+                document.documentElement.dataset.theme = light ? 'light' : 'dark';
+            } catch {
+                /* Keep the default theme when storage is unavailable. */ }
+        })();
+        document.documentElement.classList.add('is-loading');
+        window.__pageLoadStartedAt = performance.now();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blog.css">
+</head>
+
+<body class="journal-page">
+    <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading journal">
+        <div class="loader-content">
+            <span class="loader-mark"><span>&lt;</span>SE<span>/&gt;</span></span>
+            <span class="loader-spinner" aria-hidden="true"></span>
+            <span class="loader-text">Opening the journal</span>
+            <span class="loader-progress" aria-hidden="true"><span></span></span>
+        </div>
+    </div>
+
+    
+
+    <footer class="journal-footer">
+        <div class="wrap"><a href="index.html#top">Sayed Elshazly</a><span>Garage Journal · Cars, quality &amp; creative
+                work</span><a href="#top">Back to top ↑</a></div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>
