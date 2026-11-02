@@ -4,8 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Notes on cars, automotive quality, and content creation by Sayed Elshazly.">
-    <title>Garage Journal — Sayed Elshazly</title>
+    <meta name="theme-color" content="#0A0908" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#F4F1EC" media="(prefers-color-scheme: light)">
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0908'/%3E%3Ctext x='16' y='21.5' font-family='monospace' font-size='13' font-weight='700' text-anchor='middle' fill='%23FF7A7F'%3ESE%3C/text%3E%3C/svg%3E">
+    <meta name="description" content="Selected work by Sayed Elshazly: web platforms and interfaces designed and shipped end to end.">
+    <title>Projects — Sayed Elshazly</title>
     <script>
         (() => {
             try {
@@ -22,18 +26,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="blog.css">
 </head>
 
 <body class="journal-page">
-    <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading journal">
+    <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading projects">
         <div class="loader-content">
             <span class="loader-mark"><span>&lt;</span>SE<span>/&gt;</span></span>
-            <span class="loader-spinner" aria-hidden="true"></span>
-            <span class="loader-text">Opening the journal</span>
+            <span class="loader-text">Fetching projects</span>
             <span class="loader-progress" aria-hidden="true"><span></span></span>
         </div>
     </div>
@@ -74,7 +77,7 @@
     <!-- ================= PROJECTS ================= -->
     <main class="journal wrap" id="top">
 
-        <section class="projects wrap" id="projects">
+        <section class="projects" id="projects">
             <div class="section-head">
                 <div class="eyebrow">GET /projects <span class="status">· 200 OK</span></div>
                 <h2>Selected work</h2>
@@ -82,35 +85,33 @@
             </div>
             <div class="project-grid">
 
-                <div class="project-card">
+                <article class="project-card">
                     <figure class="project-visual">
-                        <img src="./assets/blog/Screenshot (329)(1).png" alt="Illustrative inventory dashboard preview"
-                            loading="lazy" decoding="async">
+                        <img src="./assets/blog/Screenshot (329)(1).webp" width="1400" height="711"
+                            alt="El-Wahab Group website homepage" loading="lazy" decoding="async">
                     </figure>
                     <div class="pc-top">
                         <span class="method get">GET</span>
-                        <span class="route">/projects/inventory-api</span>
+                        <span class="route">/projects/el-wahab-group</span>
                         <span class="status-code">200 OK</span>
                     </div>
                     <div class="pc-body">
                         <h3>El-Wahab Group | Engineering Mobility</h3>
-                        <p>A LEGACY OF VEHICLE BODY BUILDING, BUS MANUFACTURING AND
-                            COMMERCIAL TRANSPORT SOLUTIONS.</p>
-                        <div class="tag-row" style="margin-bottom:18px;">
+                        <p>A legacy of vehicle body building, bus manufacturing and commercial transport solutions.</p>
+                        <div class="tag-row">
                             <span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span>
                         </div>
                         <div class="pc-links">
-                            <!-- <a href="elwahab-groub.up.railway.app"></a> -->
                             <a href="https://elwahab-groub.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
                             <a href="#">GitHub ↗</a>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card">
+                <article class="project-card">
                     <figure class="project-visual">
-                        <img src="./assets/blog/Screenshot (332)(1).png" alt="Illustrative booking calendar preview"
-                            loading="lazy" decoding="async">
+                        <img src="./assets/blog/Screenshot (332)(1).webp" width="1400" height="695"
+                            alt="Portfolio homepage preview" loading="lazy" decoding="async">
                     </figure>
                     <div class="pc-top">
                         <span class="method post">POST</span>
@@ -122,96 +123,89 @@
                         <p>I'm a <b>Backend Developer</b> focused on PHP and the Laravel ecosystem. I like
                             turning ambiguous requirements into APIs and services that are fast, well-tested,
                             and easy for the next developer to reason about.</p>
-                        <div class="tag-row" style="margin-bottom:18px;">
-                            <span class="tag">JavaScript</span><span class="tag">CSS</span><span class="tag">HTMl</span>
+                        <div class="tag-row">
+                            <span class="tag">JavaScript</span><span class="tag">CSS</span><span class="tag">HTML</span>
                         </div>
                         <div class="pc-links">
-                            <!-- <a href="https://selshazly-portfolio.up.railway.app">Live ↗</a> -->
-                            <a href="https://portfoliosedev.vercel.app/" target="_blank">Live ↗</a>
-                            <!-- <a href="https://selshazly-portfolio.up.railway.app" target="_blank" rel="noopener">Live ↗</a> -->
-
+                            <a href="https://portfoliosedev.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
                             <a href="#">GitHub ↗</a>
                         </div>
                     </div>
-                </div>
-                <div class="project-card">
+                </article>
+
+                <article class="project-card">
                     <figure class="project-visual">
-                        <img src="./assets/blog/Screenshot (375)(1).png" alt="Illustrative booking calendar preview"
-                            loading="lazy" decoding="async">
+                        <img src="./assets/blog/Screenshot (375)(1).webp" width="1400" height="716"
+                            alt="Fahma burger restaurant website preview" loading="lazy" decoding="async">
                     </figure>
                     <div class="pc-top">
                         <span class="method post">POST</span>
-                        <span class="route">/projects/portfolio</span>
+                        <span class="route">/projects/fahma</span>
                         <span class="status-code">201 Created</span>
                     </div>
                     <div class="pc-body">
                         <h3>Fahma</h3>
-                        <p>It's <b>Fahma</b> is a unique burger spot dedicated to serving real flame-grilled meat with
-                            authentic smoky flavors, melted cheese, and signature homemade sauces. Every bite is crafted
-                            with love to
-                            give you a bold and unforgettable experience—from the grill straight to your door!</p>
-                        <div class="tag-row" style="margin-bottom:18px;">
-                            <span class="tag">JavaScript</span><span class="tag">CSS</span><span class="tag">HTMl</span>
+                        <p><b>Fahma</b> is a burger spot dedicated to serving real flame-grilled meat with
+                            authentic smoky flavors, melted cheese, and signature homemade sauces. Every bite is
+                            crafted to give you a bold, unforgettable experience — from the grill straight to your
+                            door.</p>
+                        <div class="tag-row">
+                            <span class="tag">JavaScript</span><span class="tag">CSS</span><span class="tag">HTML</span>
                         </div>
                         <div class="pc-links">
-                            <!-- <a href="https://selshazly-portfolio.up.railway.app">Live ↗</a> -->
-                            <a href="https://fahma-lv.vercel.app" target="_blank">Live ↗</a>
-                            <!-- <a href="https://selshazly-portfolio.up.railway.app" target="_blank" rel="noopener">Live ↗</a> -->
-
+                            <a href="https://fahma-lv.vercel.app" target="_blank" rel="noopener">Live ↗</a>
                             <a href="#">GitHub ↗</a>
                         </div>
                     </div>
-                </div>
-                <div class="project-card">
+                </article>
+
+                <article class="project-card">
                     <figure class="project-visual">
-                        <img src="./assets/blog/Screenshot (388)(1).png" alt="Illustrative booking calendar preview"
-                            loading="lazy" decoding="async">
+                        <img src="./assets/blog/Screenshot (388)(1).webp" width="1400" height="753"
+                            alt="Dar Real Estate website preview" loading="lazy" decoding="async">
                     </figure>
                     <div class="pc-top">
                         <span class="method post">POST</span>
-                        <span class="route">/projects/portfolio</span>
+                        <span class="route">/projects/dar-real-state</span>
                         <span class="status-code">201 Created</span>
                     </div>
                     <div class="pc-body">
                         <h3>Dar-RealState</h3>
-                        <p>It's <b>Dar</b> is a property consultancy helping individuals, families and investors
-                            buy, sell and rent residential, commercial and office units and land across New Cairo, West
-                            Cairo, the New Capital and the North Coast.
-
-                            We believe the best deal is one both sides fully understand — so we work calmly, explain
-                            clearly, and leave the decision to you.</p>
-                        <div class="tag-row" style="margin-bottom:18px;">
-                            <span class="tag">JavaScript</span><span class="tag">CSS</span><span class="tag">HTMl</span>
+                        <p><b>Dar</b> is a property consultancy helping individuals, families and investors
+                            buy, sell and rent residential, commercial and office units and land across New Cairo,
+                            West Cairo, the New Capital and the North Coast.</p>
+                        <div class="tag-row">
+                            <span class="tag">JavaScript</span><span class="tag">CSS</span><span class="tag">HTML</span>
                         </div>
                         <div class="pc-links">
-                            <a href="https://dar-real-state.vercel.app" target="_blank">Live ↗</a>
+                            <a href="https://dar-real-state.vercel.app" target="_blank" rel="noopener">Live ↗</a>
                             <a href="#">GitHub ↗</a>
                         </div>
                     </div>
-                </div>
-                <div class="project-card">
+                </article>
+
+                <article class="project-card">
                     <figure class="project-visual">
-                        <img src="./assets/blog/Screenshot (389)(1).png" alt="Illustrative booking calendar preview"
-                            loading="lazy" decoding="async">
+                        <img src="./assets/blog/Screenshot (389)(1).webp" width="1400" height="761"
+                            alt="BogBog food ordering website preview" loading="lazy" decoding="async">
                     </figure>
                     <div class="pc-top">
                         <span class="method post">POST</span>
-                        <span class="route">/projects/portfolio</span>
+                        <span class="route">/projects/bogbog</span>
                         <span class="status-code">201 Created</span>
                     </div>
                     <div class="pc-body">
                         <h3>BogBog</h3>
-                        <p>It's <b>bogbog</b> من أول قطمة لآخر نقطة صوص — اختار اللي نفسك فيه، وإحنا نجهّزلك البوكس.
-</p>
-                        <div class="tag-row" style="margin-bottom:18px;">
-                            <span class="tag">JavaScript</span><span class="tag">CSS</span><span class="tag">HTMl</span>
+                        <p><b>BogBog</b> — من أول قطمة لآخر نقطة صوص، اختار اللي نفسك فيه وإحنا نجهّزلك البوكس.</p>
+                        <div class="tag-row">
+                            <span class="tag">JavaScript</span><span class="tag">CSS</span><span class="tag">HTML</span>
                         </div>
                         <div class="pc-links">
-                            <a href="https://bog-bog.vercel.app/" target="_blank">Live ↗</a>
+                            <a href="https://bog-bog.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
                             <a href="#">GitHub ↗</a>
                         </div>
                     </div>
-                </div>
+                </article>
 
             </div>
         </section>

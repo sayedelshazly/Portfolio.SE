@@ -11,12 +11,7 @@
 
 .journal-page .journal-home {
     text-decoration: none;
-}
-
-.journal {
-    max-width: 1280px;
-    padding-top: 116px;
-}
+}.journal { max-width: 1280px; padding-top: 108px; }
 
 .journal-intro {
     display: grid;
@@ -154,8 +149,6 @@
 .journal-footer a:hover { color: var(--red-readable); }
 
 .journal-page .nav-links a[aria-current="page"] { color: var(--text-primary); }
-.journal-page .nav-links a[aria-current="page"]::after { width: 100%; }
-.journal-page .nav-links li:not(.nav-close-item) { padding-bottom: 8px; }
 
 @media (min-width: 921px) {
     .journal-page .nav-links a[aria-current="page"] { border-color: color-mix(in srgb, var(--red-primary) 35%, transparent); background: color-mix(in srgb, var(--red-primary) 14%, transparent); }

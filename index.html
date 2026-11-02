@@ -5,6 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0A0908" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F4F1EC" media="(prefers-color-scheme: light)">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0908'/%3E%3Ctext x='16' y='21.5' font-family='monospace' font-size='13' font-weight='700' text-anchor='middle' fill='%23FF7A7F'%3ESE%3C/text%3E%3C/svg%3E">
+  <meta name="description"
+    content="Sayed Elshazly — backend engineer in Cairo building reliable PHP and Laravel APIs, databases, and production services.">
   <title>Sayed Elshazly — Backend Engineer</title>
   <script>
     (() => {
@@ -24,8 +30,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet">
+  <link rel="preload" as="image" href="./portrait2.webp" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -34,7 +41,6 @@
   <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading website">
     <div class="loader-content">
       <span class="loader-mark"><span>&lt;</span>SE<span>/&gt;</span></span>
-      <span class="loader-spinner" aria-hidden="true"></span>
       <span class="loader-text">Preparing your experience</span>
       <span class="loader-progress" aria-hidden="true"><span></span></span>
     </div>
@@ -58,7 +64,8 @@
         <li><a href="./blog.html" target="_self">Blog</a></li>
         <li class="nav-close-item"><button class="nav-close" type="button">Close menu</button></li>
       </ul>
-      <div class="status-pill"><span class="dot"></span><span class="label">available for work</span></div>
+      <div class="status-pill"><span class="dot" aria-hidden="true"></span><span class="label">available for
+          work</span></div>
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode"
         title="Switch to light mode">
         <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -79,8 +86,11 @@
     <!-- ================= HERO ================= -->
     <section class="hero wrap" id="top">
       <div class="hero-intro">
-        <h1>Sayed Abdo Elshazly<span class="accent">.</span></h1>
         <div class="eyebrow">GET /developer <span class="status">· HTTP/1.1 200 OK</span></div>
+        <h1 class="hero-title">
+          <span class="line"><span>Sayed Abdo</span></span>
+          <span class="line"><span>Elshazly<span class="accent">.</span></span></span>
+        </h1>
         <div class="role">Backend Engineer <span class="pipe">/</span> PHP &amp; Laravel Specialist</div>
       </div>
 
@@ -89,31 +99,35 @@
           architecture, and code that holds up in production. Based in Cairo, working with teams
           anywhere.</p>
         <div class="btn-row">
-          <a href="./projects.html" class="btn btn-primary">View Projects →</a>
-          <a href="#contact" class="btn btn-ghost">Let's Talk <span aria-hidden="true">↗</span></a>
+          <a href="./projects.html" class="btn btn-primary">View Projects <span class="arw" aria-hidden="true">→</span></a>
+          <a href="#contact" class="btn btn-ghost">Let's Talk <span class="arw" aria-hidden="true">↗</span></a>
         </div>
       </div>
 
       <div class="term-card">
         <div class="term-bar">
           <span class="tdot"></span><span class="tdot"></span><span class="tdot"></span>
-          <!-- <span class="tpath">~/portfolio/profile.jpg</span> -->
+          <span class="tpath">~/sayed/profile.json</span>
         </div>
         <div class="term-photo">
-          <img src="./portrait2.jpeg" alt="Portrait of Sayed Elshazly, backend engineer">
+          <picture>
+            <source srcset="./portrait2.webp" type="image/webp">
+            <img src="./portrait2.jpeg" width="1288" height="1600"
+              alt="Portrait of Sayed Elshazly, backend engineer" fetchpriority="high" decoding="async">
+          </picture>
           <div class="scan"></div>
           <div class="term-json">
-            <span class="k">"role"</span>: <span class="s">"Backend Engineer"</span>,<br>
-            <span class="k">"stack"</span>: <span class="s">["PHP", "Laravel", "MySQL"]</span>,<br>
-            <span class="k">"status"</span>: <span class="s">"available"</span><span class="cursor"></span>
+            <span class="jl"><span class="k">"role"</span>: <span class="s">"Backend Engineer"</span>,</span>
+            <span class="jl"><span class="k">"stack"</span>: <span class="s">["PHP", "Laravel", "MySQL"]</span>,</span>
+            <span class="jl"><span class="k">"status"</span>: <span class="s">"available"</span><span class="cursor"></span></span>
           </div>
         </div>
       </div>
 
       <div class="stat-row">
-        <div class="stat"><b>1+</b><span>Years Experience</span></div>
-        <div class="stat"><b>5+</b><span>Projects Shipped</span></div>
-        <div class="stat"><b>2+</b><span>APIs Built</span></div>
+        <div class="stat"><b data-count="1" data-suffix="+">1+</b><span>Years Experience</span></div>
+        <div class="stat"><b data-count="5" data-suffix="+">5+</b><span>Projects Shipped</span></div>
+        <div class="stat"><b data-count="2" data-suffix="+">2+</b><span>APIs Built</span></div>
       </div>
     </section>
 
@@ -190,7 +204,7 @@
         <div class="eyebrow">GET /experience <span class="status">· 200 OK</span></div>
         <h2>Where I've worked</h2>
       </div>
-      <div class="log">
+      <div class="log" id="experienceLog">
         <div class="log-entry">
           <div class="log-head">
             <span class="log-hash">#a3f21c</span>
@@ -222,14 +236,12 @@
       </div>
     </section>
 
-    
-
     <!-- ================= CONTACT ================= -->
     <section class="contact wrap" id="contact">
       <div class="eyebrow">POST /contact <span class="status">· awaiting request body</span></div>
       <div class="contact-grid">
         <div class="contact-info">
-          <h2 style="font-size:30px;margin-bottom:16px;">Let's build something.</h2>
+          <h2>Let's build something.</h2>
           <p>Have a backend project, an API that needs shipping, or a team that needs a
             Laravel developer? Send a message — I read everything myself.</p>
           <ul class="contact-channels">
@@ -239,7 +251,6 @@
             <li><span>Phone</span><a
                 href="https://wa.me/201099687091?text=Hi%20Sayed,%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20a%20project."
                 target="_blank" rel="noopener">+20 109 068 7091</a></li>
-
           </ul>
         </div>
         <div>
@@ -256,13 +267,12 @@
               <label for="fmsg">Message</label>
               <textarea id="fmsg" name="message" placeholder="Tell me about the project..." required></textarea>
             </div>
-            <div class="json-preview" id="jsonPreview">{
-              <span class="k">"name"</span>: <span class="v">""</span>,
-              <span class="k">"email"</span>: <span class="v">""</span>,
-              <span class="k">"message"</span>: <span class="v">""</span>
-              }</div>
-            <button type="submit" class="btn btn-primary"
-              style="justify-content:center;border:none;cursor:pointer;">Send Request →</button>
+            <div class="json-preview" id="jsonPreview" aria-hidden="true">{
+  <span class="k">"name"</span>: <span class="v">""</span>,
+  <span class="k">"email"</span>: <span class="v">""</span>,
+  <span class="k">"message"</span>: <span class="v">""</span>
+}</div>
+            <button type="submit" class="btn btn-primary">Send Request <span class="arw" aria-hidden="true">→</span></button>
           </form>
         </div>
       </div>
