@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0A0908" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#F4F1EC" media="(prefers-color-scheme: light)">
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0908'/%3E%3Ctext x='16' y='21.5' font-family='monospace' font-size='13' font-weight='700' text-anchor='middle' fill='%23FF7A7F'%3ESE%3C/text%3E%3C/svg%3E">
+    <meta name="description" content="Selected work by Sayed Elshazly: web platforms and interfaces designed and shipped end to end.">
+    <title>Projects — Sayed Elshazly</title>
+    <script>
+        (() => {
+            try {
+                const saved = localStorage.getItem('portfolio-theme');
+                const light = saved ? saved === 'light' : matchMedia('(prefers-color-scheme: light)').matches;
+                document.documentElement.dataset.theme = light ? 'light' : 'dark';
+            } catch {
+                /* Keep the default theme when storage is unavailable. */
+            }
+        })();
+        document.documentElement.classList.add('is-loading');
+        window.__pageLoadStartedAt = performance.now();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blog.css">
+</head>
+
+<body class="journal-page">
+    <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading projects">
+        <div class="loader-content">
+            <span class="loader-mark"><span>&lt;</span>SE<span>/&gt;</span></span>
+            <span class="loader-text">Fetching projects</span>
+            <span class="loader-progress" aria-hidden="true"><span></span></span>
+        </div>
+    </div>
+
+    <header>
+        <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
+        <nav aria-label="Main navigation">
+            <a class="logo" href="index.html#top" aria-label="Sayed Elshazly, portfolio home"><span
+                    class="br">&lt;</span>SayedElshazly<span class="br">/&gt;</span></a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="journal-navigation"
+                aria-label="Open navigation">
+                <span></span><span></span>
+            </button>
+            <ul class="nav-links" id="journal-navigation">
+                <li><a href="index.html#about">about</a></li>
+                <li><a href="./projects.html" aria-current="page">projects</a></li>
+                <li><a href="index.html#contact">contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li class="nav-close-item"><button class="nav-close" type="button">Close menu</button></li>
+            </ul>
+            <a class="status-pill journal-home" href="index.html#top"><span aria-hidden="true">↖</span><span
+                    class="label">Portfolio</span></a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode"
+                title="Switch to light mode">
+                <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path
+                        d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42">
+                    </path>
+                </svg>
+                <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M20.2 15.1A8.5 8.5 0 0 1 8.9 3.8 8.6 8.6 0 1 0 20.2 15.1Z"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ================= PROJECTS ================= -->
+    <main class="journal wrap" id="top">
+
+        <section class="projects" id="projects">
+            <div class="section-head">
+                <div class="eyebrow">GET /projects <span class="status">· 200 OK</span></div>
+                <h2>Selected work</h2>
+                <p>A handful of systems and APIs I've designed end-to-end, from schema to deployment.</p>
+            </div>
+            <div class="project-grid">
+
+                
+                <article class="project-card">
+                    <figure class="project-visual">
+                        <img src="./assets/blog/Screenshot (329)(1).webp" width="1400" height="711"
+                            alt="El-Wahab Group website homepage" loading="lazy" decoding="async">
+                    </figure>
+                    <div class="pc-top">
+                        <span class="method get">GET</span>
+                        <span class="route">/projects/el-wahab-group</span>
+                        <span class="status-code">200 OK</span>
+                    </div>
+                    <div class="pc-body">
+                        <h3>El-Wahab Group | Engineering Mobility</h3>
+                        <p>A legacy of vehicle body building, bus manufacturing and commercial transport solutions.</p>
+                        <div class="tag-row">
+                            <span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span>
+                        </div>
+                        <div class="pc-links">
+                            <a href="https://elwahab-groub.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
+                            <a href="#">GitHub ↗</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <figure class="project-visual">
+                        <img src="./assets/blog/Screenshot (332)(1).webp" width="1400" height="695"
+                            alt="Portfolio homepage preview" loading="lazy" decoding="async">
+                    </figure>
+                    <div class="pc-top">
+                        <span class="method post">POST</span>
+                        <span class="route">/projects/portfolio</span>
+                        <span class="status-code">201 Created</span>
+                    </div>
+                    <div class="pc-body">
+                        <h3>Sayed Elshazly — Me</h3>
+                        <p>I'm a <b>Backend Developer</b> focused on PHP and the Laravel ecosystem. I like
+                            turning ambiguous requirements into APIs and services that are fast, well-tested,
+                            and easy for the next developer to reason about.</p>
+                        <div class="tag-row">
+                            <span class="tag">JavaScript</span><span class="tag">CSS</span><span class="tag">HTML</span>
+                        </div>
+                        <div class="pc-links">
+                            <a href="https://portfoliosedev.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
+                            <a href="#">GitHub ↗</a>
+                        </div>
+                    </div>
+                </article>
+
+                
+
+            </div>
+        </section>
+        <section class="journal-close" aria-label="Contact">
+            <p>For projects, conversations, or a good car story.</p>
+            <a href="index.html#contact">Get in touch <span aria-hidden="true">↗</span></a>
+        </section>
+    </main>
+
+    <footer class="journal-footer">
+        <div class="wrap"><a href="index.html#top">Sayed Elshazly</a><span>Garage Journal · Cars, quality &amp; creative
+                work</span><a href="#top">Back to top ↑</a></div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>
